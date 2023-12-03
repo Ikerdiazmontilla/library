@@ -8,6 +8,20 @@ function Book(title,author,pages,read){
 }
 
 
-function addBookLibrary(){
+const papu = new Book("papu", "pipo", 1, "no")
+const poporrote = new Book("poporrote", "Bruh", 3, "yes")
 
+
+function addToLibrary(book){
+    myLibrary.push(book)
 }
+addToLibrary(papu)
+addToLibrary(poporrote)
+
+function showBook(book){
+    
+}
+
+
+
+console.table(myLibrary)

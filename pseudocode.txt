@@ -5,3 +5,18 @@ Green: #23FFAB
 White: #F3F3F3
 
 Font: Poppins
+
+Card creation:
+Div.card
+    h2>title
+    div
+        div>Author
+        div>Pages
+        button>Read?:yes/no
+    /div
+    div
+        button>update
+        button>Delete
+    /div
+
+/div
