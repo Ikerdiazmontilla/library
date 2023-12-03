@@ -1,0 +1,5 @@
+Colors:
+Grey: #3A4750
+Blue: #2185D5
+Green: #23FFAB
+White: #F3F3F3
