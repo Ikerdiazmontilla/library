@@ -1,5 +1,7 @@
 Colors:
-Grey: #3A4750
+Grey: #2D4059
 Blue: #2185D5
 Green: #23FFAB
 White: #F3F3F3
+
+Font: Poppins

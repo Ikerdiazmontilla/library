@@ -1,0 +1,82 @@
+:root{
+    font-size: 16px;
+    --grey:#2D4059;
+    --blue:#2185D5;
+    --green:#23FFAB;
+    --white:#F3F3F3;
+    --border-radius:8px;
+    --spacing-xs: 5px;
+    --spacing-s: 10px;
+    --spacing-m: 15px;
+    --spacing-l: 20px;
+    --spacing-xl: 40px;
+    --rotate: 45deg;
+}
+
+/*CSS RESET*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+button, input{
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type='text'],
+input[type='number'] {
+    cursor: text;
+}
+
+/*HEADER*/
+
+header{
+    background-color:#2185D5;
+    padding-left: 7%;
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    color: #F3F3F3;
+    font-weight: 600;
+}
+
+
+/* MAIN*/
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: #2D4059;
+}
+
+.new-book{
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    border: none;
+    border-radius: 50%;
+    color: #F3F3F3;
+    background-color: #2185D5;
+    height: 60px;
+    aspect-ratio: 1/1;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
