@@ -30,7 +30,7 @@ function showBook(book){
     const divAuthor = document.createElement("div")
     const author = document.createElement("div")
     author.classList = "info"
-    author.textContent = `By ${book.author}`
+    author.textContent = `Author: ${book.author}`
     divAuthor.appendChild(author)
     const divPages = document.createElement("div")
     const pages = document.createElement("div")

@@ -4,6 +4,7 @@
     --blue:#2185D5;
     --green:#23FFAB;
     --white:#F3F3F3;
+    --red:#f16060;
     --border-radius:8px;
     --spacing-xs: 5px;
     --spacing-s: 10px;
@@ -11,6 +12,7 @@
     --spacing-l: 20px;
     --spacing-xl: 40px;
     --rotate: 45deg;
+    --shadow: inset rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
@@ -90,6 +92,7 @@ main{
     grid-auto-flow: column;
     border-radius: var(--border-radius);
     overflow: hidden;
+    font-size: 1.2rem;
 }
 
 .card > div, .card button{
@@ -112,6 +115,29 @@ main{
 h2{
     text-align: center;
     align-self: center;
+    color: var(--white);
+}
+
+.yes{
+    background-color: var(--green);
+}
+.no{
+    background-color: var(--red);
+}
+
+.card button{
+    box-shadow: var(--shadow);
+    font-weight: 500;
+}
+
+.edit{
+    background-color: var(--green);
+    color: var(--blue);
+}
+
+.delete{
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .new-book{
