@@ -9,13 +9,14 @@ function Book(title,author,pages,read){
 }
 
 
-const papu = new Book("papu", "pipo", 1, "no")
+const papu = new Book("papu", "pipo", 1, "yes")
 const poporrote = new Book("poporrote", "Bruh", 3, "yes")
 
 
 function addToLibrary(book){
     myLibrary.push(book)
 }
+
 addToLibrary(papu)
 addToLibrary(poporrote)
 
@@ -40,7 +41,13 @@ function showBook(book){
     const buttonRead = document.createElement("button")
     const buttonEdit = document.createElement("button")
     const buttonDelete = document.createElement("button")
-    buttonRead.classList = "read"
+    
+    if(book.read.toLowerCase().includes("yes")){
+        buttonRead.classList = "read yes"
+    }
+    else{
+        buttonRead.classList = "read no"
+    }
     buttonRead.textContent = `Read?: ${book.read}`
     buttonEdit.classList = "edit"
     buttonEdit.textContent = "Edit"
@@ -54,8 +61,22 @@ function showBook(book){
     card.appendChild(buttonDelete)
     main.appendChild(card)
 }
-
 showBook(papu)
 
+function changeRead(event){
+    event.target.classList.toggle("yes")
+    if(event.target.classList.contains("yes")){
+        event.target.textContent = `Read?: yes`
+    }
+    else{
+        event.target.textContent = `Read?: no`
+    }
+}
 
-console.table(myLibrary)
+
+
+const readButtons = document.querySelectorAll(".read")
+readButtons.forEach((button) => {
+    button.addEventListener('click', changeRead)
+})
+
