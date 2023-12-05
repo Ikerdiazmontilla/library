@@ -33,7 +33,6 @@ function showBook(book){
     pages.classList = "info"
     divPages.appendChild(pages)
     const buttonRead = document.createElement("button")
-    const buttonEdit = document.createElement("button")
     const buttonDelete = document.createElement("button")
     
     if(book.read.toLowerCase().includes("yes")){
@@ -43,15 +42,12 @@ function showBook(book){
         buttonRead.classList = "read no"
     }
     buttonRead.textContent = `Read?: ${book.read}`
-    buttonEdit.classList = "edit"
-    buttonEdit.textContent = "Edit"
     buttonDelete.classList = "delete"
     buttonDelete.textContent = "Delete"
     card.appendChild(divTitle)
     card.appendChild(divAuthor)
     card.appendChild(divPages)
     card.appendChild(buttonRead)
-    card.appendChild(buttonEdit)
     card.appendChild(buttonDelete)
     main.appendChild(card)
     buttonRead.addEventListener("click", changeRead)
@@ -73,6 +69,7 @@ function changeRead(event){
         event.target.textContent = `Read?: no`
     }
 }
+
 
 
 
