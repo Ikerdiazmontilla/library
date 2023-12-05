@@ -79,4 +79,7 @@ const readButtons = document.querySelectorAll(".read")
 readButtons.forEach((button) => {
     button.addEventListener('click', changeRead)
 })
+const dialog = document.querySelector("dialog")
 
+const newBook = document.querySelector(".new-book")
+newBook.addEventListener("click", () => dialog.showModal())
