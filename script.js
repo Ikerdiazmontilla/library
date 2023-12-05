@@ -50,26 +50,31 @@ function showBook(book){
     card.appendChild(buttonRead)
     card.appendChild(buttonDelete)
     main.appendChild(card)
-    buttonRead.addEventListener("click", changeRead)
+    buttonRead.addEventListener("click", (event) => {
+        event.target.classList.toggle("yes")
+        if(event.target.classList.contains("yes")){
+            event.target.textContent = `Read?: yes`
+        }
+        else{
+        event.target.textContent = `Read?: no`
+        }
+        const index = myLibrary.findIndex( item => item.title === book.title)
+        if (myLibrary[index].read === "yes"){
+            myLibrary[index].read = "no"
+        }
+        else{
+            myLibrary[index].read = 'yes'
+        }   
+    })
+
     buttonDelete.addEventListener("click", () => {
-        const index = myLibrary.findIndex( book => book.title === divTitle)
+        const index = myLibrary.findIndex( item => item.title === book.title)
         if (index !== -1) {
-            array.splice(index, 1);
+            myLibrary.splice(index, 1);
         }
         card.remove()
-        })
+    })
 }
-
-function changeRead(event){
-    event.target.classList.toggle("yes")
-    if(event.target.classList.contains("yes")){
-        event.target.textContent = `Read?: yes`
-    }
-    else{
-        event.target.textContent = `Read?: no`
-    }
-}
-
 
 
 
@@ -91,6 +96,7 @@ form.addEventListener("submit", function(event){
     let pages = document.querySelector('#pages').value;
     let read = document.querySelector('#read').value;
     let newBook = new Book(title, author, pages, read)
+    addToLibrary(newBook)
     showBook(newBook)
     dialog.close();
     const inputs = document.querySelectorAll("input");
