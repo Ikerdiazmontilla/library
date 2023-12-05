@@ -55,6 +55,13 @@ function showBook(book){
     card.appendChild(buttonDelete)
     main.appendChild(card)
     buttonRead.addEventListener("click", changeRead)
+    buttonDelete.addEventListener("click", () => {
+        const index = myLibrary.findIndex( book => book.title === divTitle)
+        if (index !== -1) {
+            array.splice(index, 1);
+        }
+        card.remove()
+        })
 }
 
 function changeRead(event){
@@ -66,6 +73,7 @@ function changeRead(event){
         event.target.textContent = `Read?: no`
     }
 }
+
 
 
 
