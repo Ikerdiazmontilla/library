@@ -68,15 +68,14 @@ function changeRead(event){
 }
 
 
+
 const readButtons = document.querySelectorAll(".read")
 const dialog = document.querySelector("dialog")
-
 const newBook = document.querySelector(".new-book")
 newBook.addEventListener("click", () => dialog.showModal())
-
-
 const close = document.querySelector(".close")
 close.addEventListener("click", () => dialog.close())
+
 
 
 const form = document.querySelector("form");
@@ -89,5 +88,7 @@ form.addEventListener("submit", function(event){
     let newBook = new Book(title, author, pages, read)
     showBook(newBook)
     dialog.close();
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => input.value = "") 
 }
 )
