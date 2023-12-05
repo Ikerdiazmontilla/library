@@ -9,16 +9,10 @@ function Book(title,author,pages,read){
 }
 
 
-const papu = new Book("papu", "pipo", 1, "yes")
-const poporrote = new Book("poporrote", "Bruh", 3, "yes")
-
-
 function addToLibrary(book){
     myLibrary.push(book)
 }
 
-addToLibrary(papu)
-addToLibrary(poporrote)
 
 function showBook(book){
     const card = document.createElement("div")
@@ -60,8 +54,8 @@ function showBook(book){
     card.appendChild(buttonEdit)
     card.appendChild(buttonDelete)
     main.appendChild(card)
+    buttonRead.addEventListener("click", changeRead)
 }
-showBook(papu)
 
 function changeRead(event){
     event.target.classList.toggle("yes")
@@ -74,12 +68,26 @@ function changeRead(event){
 }
 
 
-
 const readButtons = document.querySelectorAll(".read")
-readButtons.forEach((button) => {
-    button.addEventListener('click', changeRead)
-})
 const dialog = document.querySelector("dialog")
 
 const newBook = document.querySelector(".new-book")
 newBook.addEventListener("click", () => dialog.showModal())
+
+
+const close = document.querySelector(".close")
+close.addEventListener("click", () => dialog.close())
+
+
+const form = document.querySelector("form");
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+    let title = document.querySelector('#title').value;
+    let author = document.querySelector('#author').value;
+    let pages = document.querySelector('#pages').value;
+    let read = document.querySelector('#read').value;
+    let newBook = new Book(title, author, pages, read)
+    showBook(newBook)
+    dialog.close();
+}
+)
